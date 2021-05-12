@@ -1,19 +1,25 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Longin from './components/Longin';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Login from "./components/Login";
 
-const App = () => {
+function App() {
   return (
-    <div>
+    <div className="App">
       <Router>
         <Switch>
-          <Route path="/">
-            <Longin />
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <Route path="/home">
+            <Header />
+            <Home />
           </Route>
         </Switch>
       </Router>
     </div>
   );
-};
+}
 
 export default App;
